@@ -1,0 +1,48 @@
+@charset "UTF-8";
+:root {
+    --sans-serif: "abeezee" , "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --primary: blue;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline:0;
+    font-family: var(--sans-serif);
+}
+.main-content{
+    display: flex;
+}
+.field {
+    display: block;
+    width: 100%;
+    border-radius: 30px;
+    border:none;
+    content:center;
+}
+.field{
+    margin: 30px 0;
+}
+input, select, button{
+    padding: 3px;
+    background-color:gainsboro;
+    font-size: 1.6em;
+}
+button{
+    width: 130px;
+    height: 50px;
+    border: 0px;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+button:hover{
+    background-color: rgba(30, 32, 32, 0.733);
+}
+button:active{
+    background-color: rgba(62, 65, 65, 0.667);
+}
+.logs, .logs *{
+    color: red;
+}
