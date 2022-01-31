@@ -1,6 +1,6 @@
 @charset "UTF-8";
 :root {
-    --sans-serif: "abeezee" , "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --sans-serif:"Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --primary: blue;
 }
 *{
@@ -23,7 +23,7 @@
 .field{
     margin: 30px 0;
 }
-input, select, button{
+input, select{
     padding: 3px;
     background-color:gainsboro;
     font-size: 1.6em;
@@ -33,10 +33,20 @@ button{
     height: 50px;
     border: 0px;
     color: white;
-    padding: 5px 10px;
+    padding: 5px 5px;
     margin: 5px;
 }
-
+.create{
+    border-radius: 30px;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    width: 100px;
+}
+.create:hover{
+    border-bottom: 2px solid #C4CBD2;
+    background-color: #C4CBD2;
+}
 button:hover{
     background-color: rgba(30, 32, 32, 0.733);
 }

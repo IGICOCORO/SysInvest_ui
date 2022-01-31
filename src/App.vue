@@ -18,7 +18,7 @@ import NavBar from "./components/navbar"
 export default {
   components:{Login, TopBar, NavBar},
   data() {
-    return {
+    return { 
       is_logged: !!localStorage.getItem("user"),
     };
   },

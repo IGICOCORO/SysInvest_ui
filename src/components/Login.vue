@@ -5,11 +5,11 @@
             <img class="logo" src="../assets/logo.png" />
           </span>
             <div class="field">
-                <label for="">Nom d'utilisateur:</label>
+                <label for="">Username</label>
                 <input type="text" v-model="username">
             </div>
             <div class="field">
-              <label for="">Mot de passe:</label>
+              <label for="">Password</label>
               <input type="password" v-model="password">
             </div>
               <router-link to="/">
@@ -25,8 +25,8 @@ name: 'Login',
 data(){
   return {
     is_logged : true,
-    username: '',
-    password:'',
+    username : '',
+    password :'',
     logs:"",
   }
 },

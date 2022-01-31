@@ -2,40 +2,44 @@
 <div class="navbar nonprintable">
 	<div class="menus">
 		<router-link to="/">
-			<div class="menu">
-				Vehicules
-			</div>
+			<button class="menu">
+				<i class="fa fa-tachometer" aria-hidden="true"></i>
+			</button>
 		</router-link>
-		<router-link to="/ventes">
-			<div class="menu">
-				Crédits
-			</div>
+		<router-link to="/vehicules">
+			<button class="menu">
+				<i class="fa fa-car" aria-hidden="true"></i>
+			</button>
 		</router-link>
-		<router-link to="/payments">
-			<div class="menu">
-				Parcelle
-			</div>
+		<router-link to="/credits">
+			<button class="menu">
+				<i class="fa fa-credit-card" aria-hidden="true"></i>
+			</button>
 		</router-link>
-		<router-link to="/payments">
-			<div class="menu">
-				Autres Investissements
-			</div>
+		<router-link to="/parcelle">
+			<button class="menu">
+				<i class="fa fa-object-group" aria-hidden="true"></i>
+			</button>
 		</router-link>
-
-		<router-link to="/payments">
-			<div class="menu">
-				Income
-			</div>
+		<router-link to="/investotres">
+			<button class="menu">
+				<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+			</button>
 		</router-link>
-		<router-link to="/payments">
-			<div class="menu">
-				Outcome
-			</div>
+		<router-link to="/income">
+			<button class="menu">
+				<i class="fa fa-arrow-right" aria-hidden="true"></i>
+			</button>	
 		</router-link>
-		<router-link to="/payments">
-			<div class="menu">
-				Dettes
-			</div>
+		<router-link to="/outcome">
+			<button class="menu">
+				<i class="fa fa-arrow-left" aria-hidden="true"></i>
+			</button>
+		</router-link>
+		<router-link to="/dettes">
+			<button class="menu">
+				<i class="fa fa-info-circle" aria-hidden="true"></i>
+			</button>
 		</router-link>
 	</div>
 </div>
@@ -48,27 +52,29 @@ export default {
 <style scoped>
 .navbar{
 	height: 100%;
-	width: 120px;
-	min-width: 120px;
+	width: 140px;
+	min-width: 30px;
 	position: relative;
-	background-color: cadetblue;
 }
 .menus{
 	position: absolute;
-	top: 35%;
+	margin-top:650px;
+	margin-left:20px;
 	width: 100%;
 }
 .menu{
-	color: whitesmoke;
+	width:70px;
 	text-align: center;
-	padding: 10px 0;
+	padding: 5px 0;
+	border-radius:10px;
+	box-shadow: inset 5em 1em #F1F2F3;
+	font-size:1.6em;
 }
-.menu:hover{
-	border-bottom: 1px solid white;
-	background-color: #fff2;
+.menu:hover{ 
+	border-bottom: 2px solid #C4CBD2;
+	background-color: #C4CBD2;
 }
-.menu.active{
-	background-color: #fff5;
-	border-bottom: 2px solid whitesmoke;
+.fa{
+	color:#000;
 }
 </style>
