@@ -3,7 +3,7 @@
 	<!-- <div class="logo">
 		<img src="../assets/SI.png">
 	</div> -->
-	<h3><span class="sys">Sys</span><span class="invest">Invest</span></h3>
+	<div class="title"><span class="sys">Sys</span><span class="invest">Invest</span></div>
 	<div class="right">
 	<div class="notification">
 		<i class="fa fa-bell" aria-hidden="true"></i>
@@ -16,10 +16,15 @@
 </template>
 <script>
 export default {
+	data() {
+		return{
+		}
+	},
 	methods:{
 		logOut(){
 			if(confirm("Voulez vous vraiment vous deconnecter?")){
-				this.$store.state.user = null
+				localStorage.removeItem("user")
+				window.location = "/"
 			}
 		}
 	}
@@ -51,12 +56,13 @@ export default {
 	align-items: center;
 	height: 70px;
 }
-h3{
+.title{
 	display: inline-block;
 	font-family: "Arial";
 	font-weight:bold;
 	margin-left:30px;
 	font-size:50px;
+	text-align:center;
 }
 .sys{
 	font-weight:normal;

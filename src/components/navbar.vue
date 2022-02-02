@@ -11,6 +11,11 @@
 				<i class="fa fa-car" aria-hidden="true"></i>
 			</button>
 		</router-link>
+		<router-link to="/motos">
+			<button class="menu">
+				<i class="fa fa-motorcycle" aria-hidden="true"></i>
+			</button>
+		</router-link>
 		<router-link to="/credits">
 			<button class="menu">
 				<i class="fa fa-credit-card" aria-hidden="true"></i>
@@ -44,11 +49,7 @@
 	</div>
 </div>
 </template>
-<script>
-export default {
-	
-}
-</script>
+<script></script>
 <style scoped>
 .navbar{
 	height: 100%;
@@ -58,7 +59,7 @@ export default {
 }
 .menus{
 	position: absolute;
-	margin-top:650px;
+	margin-top:600px;
 	margin-left:20px;
 	width: 100%;
 }
@@ -77,4 +78,26 @@ export default {
 .fa{
 	color:#000;
 }
+@media only screen and (max-width: 520px) {
+  .menus {
+    display:flex;
+    flex-direction: row;
+  }
+  .menu{
+	width:45px;
+	text-align: center;
+	padding: 0;
+	margin-top: 350px;
+	border-radius:10px;
+	box-shadow: inset 5em 1em #F1F2F3;
+	font-size:1.6em;
+}
+.menu:hover{ 
+	border-bottom: 2px solid #C4CBD2;
+	background-color: #C4CBD2;
+}
+.fa{
+	color:#000;
+}
+} 
 </style>
