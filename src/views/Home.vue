@@ -5,7 +5,7 @@
           <div class="count_view red">
             <div class="count_list">
               <p>Capital</p>
-              <h2>100.000.000</h2>
+              <h2>{{ $store.state.capital}}</h2>
               <h2></h2>
             </div>
             <div class="detail_list_icon">
@@ -49,7 +49,40 @@
       </div>
   </div>
 </template>
-<script></script>
+<script>
+  import axios from "axios"
+  export default {
+    components: {
+    },
+    data() {
+      return {
+        capital:[],
+        montant : null
+      }
+    },
+computed:{
+    headers(){
+      return {
+        headers: {
+          "Authorization": "Bearer " + this.$store.state.user.access
+        }
+      }
+    }
+  },
+    methods: {
+     fetchCapital(){    
+      axios.get(this.$store.state.url+'/Compte_Principal/', this.headers)
+      .then((response) => {
+        console.log(response.data)
+        this.$store.state.capital = response?.data
+         
+      }).catch((error) => {
+        console.log(error)
+      })
+    },
+   },
+ }
+</script>
 <style>
   .count_view {
   height: 80px;
