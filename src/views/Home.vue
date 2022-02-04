@@ -5,7 +5,7 @@
           <div class="count_view red">
             <div class="count_list">
               <p>Capital</p>
-              <h2>{{ $store.state.capital}}</h2>
+              <h2>16.999.989.249.440 Fbu</h2>
               <h2></h2>
             </div>
             <div class="detail_list_icon">
@@ -17,7 +17,7 @@
           <div class="count_view blue">
             <div class="count_list">
               <p>Income</p>
-              <h2>78.000.000</h2>
+              <h2>78.000.000 Fbu</h2>
             </div>
             <div class="detail_list_icon">
               <i class="fa fa-arrow-left blue" aria-hidden="true"></i>
@@ -28,7 +28,7 @@
           <div class="count_view green">
             <div class="count_list">
               <p>Outcome</p>
-              <h2>65.000.000</h2>
+              <h2>65.000.000 Fbu</h2>
             </div>
             <div class="detail_list_icon">
               <i class="fa fa-arrow-right green" aria-hidden="true"></i>
@@ -39,7 +39,7 @@
           <div class="count_view orange">
             <div class="count_list">
               <p>Dettes</p>
-              <h2>25.000.000</h2>
+              <h2>25.000.000 Fbu</h2>
             </div>
             <div class="detail_list_icon">
               <i class="fa fa-info-circle yellow" aria-hidden="true"></i>
@@ -73,9 +73,8 @@ computed:{
      fetchCapital(){    
       axios.get(this.$store.state.url+'/Compte_Principal/', this.headers)
       .then((response) => {
-        console.log(response.data)
-        this.$store.state.capital = response?.data
-         
+        this.$store.state.capital = response.data.results
+        console.log(response.data.results)         
       }).catch((error) => {
         console.log(error)
       })

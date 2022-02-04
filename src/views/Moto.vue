@@ -5,12 +5,11 @@
       <table>
         <thead>
           <tr>
-            <th>#</th>
             <th>Quantite</th>
             <th>PA Unitaire</th>
-            <th>Date</th>
+            <th>Date d'achat</th>
             <th>Autres dépenses</th>
-            <th>date</th>
+            <th>Détails</th>
             <th>Date de vente prévisionnelle </th>
             <th>PV prévisionnelle </th>
             <th>options</th>
@@ -18,7 +17,6 @@
         </thead>
         <tbody>
           <tr v-for=" moto in motos" :key="moto">
-            <td>{{ moto.id }}</td>
             <td>{{ moto.quantite }}</td>
             <td>{{ moto.prix_achat_unitaire }}</td>
             <td>{{ moto.date_achat }}</td>

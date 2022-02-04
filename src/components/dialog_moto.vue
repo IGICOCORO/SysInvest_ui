@@ -34,7 +34,7 @@
               <input type="date" v-model="date_vente">
             </div>
             <div class="field">
-              <label for="details">Prix  :</label>
+              <label for="details">PV :</label>
               <input type="number" v-model="prix_vente">
             </div>
              <div class="buttons">
@@ -78,7 +78,7 @@ import axios from "axios"
           autres_depenses:this.dépenses,
           details:this.Notes,
           date_vente_previ:this.date_vente,
-          prix_vente:this.prix_vente
+          prix_vente_unitaire_previ:this.prix_vente
         }
          axios.post(this.$store.state.url+'/motos/', data ,this.headers)
          .then((response)=>{

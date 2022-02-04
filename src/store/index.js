@@ -6,6 +6,7 @@ export default createStore({
    user : null,
    capital:[],
    motos :[],
+   credits:[],
    liste_users : [
         {
           username : "guy",

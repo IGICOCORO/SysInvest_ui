@@ -9,6 +9,7 @@
             <th>Montant </th>
             <th>Intérêt total</th>
             <th>Date de début du crédit  </th>
+            <th>Notes</th>
             <th>Nombre Total de jours </th>
             <th>Délais de récupération d'intérêt  </th>
             <th>options</th>
@@ -16,6 +17,7 @@
         </thead>
         <tbody>
           <tr>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -36,23 +38,71 @@
 </template>
 <script>
 import DialogCredit from '../components/dialog_credit.vue';
+import axios from "axios"
   export default {
     components: {
       DialogCredit,
     },
     data() {
       return {
+        demandeur: null,
+        Montant:null,
+        Intéret_total :null,
+        Date_debut_credit : null,
+        Nombre_Total_jours : null,
+        Délais_recuperation_intéret : null,
+        credits:[],
         isModalVisible: false,
+        error :''
       }
     },
+computed:{
+    headers(){
+      return {
+        headers: {
+          "Authorization": "Bearer " + this.$store.state.user.access
+        }
+      }
+    }
+  },
+    watch:{
+    "$store.state.credits"(new_val){
+      this.credits = new_val
+    }
+  },
     methods: {
+     fetchCredit(){    
+      axios.get(this.$store.state.url+'/credits/', this.headers)
+      .then((response) => {
+        this.$store.state.credits = response.data.results
+         console.log(response.data.results)
+      }).catch((error) => {
+        console.log(error)
+      })
+    },
+      deleteMoto(credit){
+        if(confirm(`Voulez vous vraiment supprimer cet investissement du Moto ?`)){
+        axios.delete(this.$store.state.url+`/credits/${credit.id}/`, this.headers)
+        .then((response) => {
+          console.log(response.data)
+          this.$store.state.credits.splice(
+            this.$store.state.credits.indexOf(credit)
+          , 1)
+        }).catch((error) => {
+          console.log(error)
+        })
+      }
+      },
       showModal() {
         this.isModalVisible = true;
       },
       closeModal() {
         this.isModalVisible = false;
       }
-    }
+    },
+    mounted(){
+    this.fetchCredit()
+  }
   };
 </script>
 <style>
