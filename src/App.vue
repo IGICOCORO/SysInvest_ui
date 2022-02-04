@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <div v-if="is_logged">
+    <div v-if="!!$store.state.user">
       <TopBar/>
       <div class="main-content">
         <NavBar/>
         <router-view/>
       </div>
     </div>
-    <Login v-else/>
+    <Login v-else />
   </div>
 </template>
 <script>
@@ -17,14 +17,23 @@ import NavBar from "./components/navbar"
 
 export default {
   components:{Login, TopBar, NavBar},
-  data() {
-    return { 
-      is_logged: !!localStorage.getItem("user"),
-    };
+ watch:{
+    "$store.state.user":{
+      handler(new_val){
+        if(!new_val){
+          localStorage.setItem('user', JSON.stringify(new_val));
+        } else {
+          localStorage.removeItem('user')
+        }
+      }
+    }
   },
-  methods: {
-
-  },
+  mounted(){
+    var user = JSON.parse(localStorage.getItem('user'));
+    if (user) {
+      this.$store.state.user = user;
+    }
+  }
 };
 </script>
 <style src="./style.css"></style>
