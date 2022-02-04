@@ -1,7 +1,7 @@
 <template>
 	<div class="popup-body">
       <div class="absolue">
-        <button class="close" @click="close">&times</button>
+        <button class="close" @click="close">X</button>
       </div>
       <center>
         <h2>Parcelle</h2>

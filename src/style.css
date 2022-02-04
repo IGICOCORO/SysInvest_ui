@@ -50,11 +50,7 @@ button:active{
 .logs, .logs *{
     color: red;
 }
-.active{
-  display: block;
-  visibility: visible!important;
-}
-.popup{
+ .popup{
   position: fixed;
   top: 0;
   left: 0;
@@ -64,23 +60,9 @@ button:active{
   visibility: hidden;
   background-color: #0004;
 }
-.popup-body{
-  position: relative;
-  width: 350px;
-  background-color: white;
-  margin: 150px auto 20px auto;
-  padding: 10px 20px;
-}
-.popup form{
-  margin-top: 20px;
-}
 .popup .absolue{
   position: absolute;
   width: calc(100% - 30px);
-}
-.popup .buttons{
-  display: inline-block;
-  margin-left: auto;
 }
 table{
     width: 100%;
@@ -90,14 +72,8 @@ thead{
     color: white;
 }
 th{
-    padding: 5px;
+    padding: 5px; 
 }
-@media only screen and (max-width: 520px) {
-   table{
-    width: 20px;
-}
-thead{
-    background-color: #7af;
-    color: white;
-} 
-}
+/* .parcelles{
+     padding: 20px 10px 0 5px;
+} */

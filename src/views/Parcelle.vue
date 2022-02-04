@@ -36,7 +36,7 @@
 <script></script>
 <style>
   .parcelles{
-  padding: 30px 20px 0 20px;
+  padding: 20px 10px 0 5px;
   width: 100%;
   height: calc(100% - 50px);
 }
@@ -45,19 +45,19 @@
 }
 .delete{
   background-color: #FF6666;
-  width: 50px;
+  width: 40px;
   height: 40px;
   border-radius: 30px;
 }
 .edit{
   background-color: #3399FF;
-  width: 50px;
+  width: 40px;
   height: 40px;
   border-radius: 30px;
 }
 .read{
   background-color: #66FF99;
-  width: 50px;
+  width: 40px;
   height: 40px;
   border-radius: 30px;
 }
