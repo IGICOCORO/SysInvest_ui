@@ -5,44 +5,41 @@
       <div class="absolue">
         <button class="close" @click="close">X</button>
       </div>
-      <center>
-        <h1>Moto</h1>
-      </center>
-      <form class="form" method="post">
+      <form class="form">
         <div class="group">  
             <div class="field">
               <label>Quantite:</label>
-              <input type="number">
+              <input type="number" v-model="quantite">
             </div>
             <div class="field">
               <label for="montant">Prix :</label>
-              <input type="number">
+              <input type="number" v-model="prix_achat">
             </div>
             <div class="field">
-              <label>date:</label>
-              <input type="date">
+              <label>Date:</label>
+              <input type="date" v-model="date_achat">
             </div>
             <div class="field">
               <label for="details">Autres dépenses:</label>
-              <input type="text">
+              <input type="number" v-model="dépenses">
             </div>
         </div> 
         <div class="group"> 
              <div class="field">
               <label for="details">Notes:</label>
-              <input type="text">
+              <textarea type="text" v-model="Notes"></textarea>
             </div>
             <div class="field">
-              <label for="details">Date :</label>
-              <input type="date">
+              <label for="details">Date vente :</label>
+              <input type="date" v-model="date_vente">
             </div>
             <div class="field">
               <label for="details">Prix  :</label>
-              <input type="number">
+              <input type="number" v-model="prix_vente">
             </div>
              <div class="buttons">
-          <button class="reset" type="reset">Reset</button>
-          <button class="submit" type="submit">Soumettre</button>
+          <button class="reset" type="reset" @click="annuler()">Reset</button>
+          <button class="submit" type="submit" @close="close" @click.prevent="submitMoto()">Soumettre</button>
         </div>
         </div>
       </form>
@@ -50,8 +47,50 @@
     </div>
 </template>
 <script>
+import axios from "axios"
 	export default {
+    data(){
+      return{
+        quantite :null,
+        prix_achat : null,
+        date_achat : null,
+        depenses :null,
+        Notes :"",
+        date_vente :null,
+        prix_vente: null 
+      }
+    },
+    computed:{
+    headers(){
+      return {
+        headers: {
+          "Authorization": "Bearer " + this.$store.state.user.access
+        }
+      }
+    }
+    },
     methods: {
+      submitMoto(){
+        let data = {
+          quantite:this.quantite,
+          prix_achat_unitaire:this.prix_achat,
+          date_achat:this.date_achat,
+          autres_depenses:this.dépenses,
+          details:this.Notes,
+          date_vente_previ:this.date_vente,
+          prix_vente:this.prix_vente
+        }
+         axios.post(this.$store.state.url+'/motos/', data ,this.headers)
+         .then((response)=>{
+          this.$store.state.motos.push(response.data)
+          this.close()
+         }).catch((error) => {
+        console.log(error)
+      })
+      },
+      deleteMoto(){
+
+      },
       close() {
         this.$emit('close');
       }
@@ -61,9 +100,13 @@
 <style>
 .reset{
   background:#FF6666;
+  border-radius:30px;
+  width:100px;
 }
 .submit{
   background:#3399FF;
+    border-radius:30px;
+    width:100px;
 }
 *{
   justify-content:center;
@@ -93,13 +136,12 @@
   height:500px;
   width:700px;
   color:#333;
-  padding:30px;
+  padding:20px;
   position:fixed;
   top:20%;
    border-radius:10px;
    margin-left:350px;
 }
-
 .close{
   background:red;
   width:30px;
