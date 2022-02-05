@@ -21,7 +21,7 @@
             </div>
             <div class="field">
               <label for="details">Autres dépenses:</label>
-              <input type="number" v-model="dépenses">
+              <input type="number" v-model="autres_depenses">
             </div>
         </div> 
         <div class="group"> 
@@ -54,7 +54,7 @@ import axios from "axios"
         quantite :null,
         prix_achat : null,
         date_achat : null,
-        depenses :null,
+        autres_depenses :null,
         Notes :"",
         date_vente :null,
         prix_vente: null 
@@ -75,7 +75,7 @@ import axios from "axios"
           quantite:this.quantite,
           prix_achat_unitaire:this.prix_achat,
           date_achat:this.date_achat,
-          autres_depenses:this.dépenses,
+          autres_depenses:this.autres_depenses,
           details:this.Notes,
           date_vente_previ:this.date_vente,
           prix_vente_unitaire_previ:this.prix_vente
