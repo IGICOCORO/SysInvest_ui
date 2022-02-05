@@ -7,7 +7,9 @@
         <router-view/>
       </div>
     </div>
-    <Login v-else />
+    <div v-else>
+       <Login/>
+    </div>
   </div>
 </template>
 <script>

@@ -7,6 +7,8 @@ export default createStore({
    capital:[],
    motos :[],
    credits:[],
+   parcelles:[],
+   autres_investissements:[],
    liste_users : [
         {
           username : "guy",
