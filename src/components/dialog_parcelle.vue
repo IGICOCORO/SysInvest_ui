@@ -42,7 +42,7 @@
         </div>
         <div class="field">
           <label for="details">Prix de vente prévisionnelle :</label>
-          <input type="date" v-model="prix_vente_previ">
+          <input type="number" v-model="prix_vente_previ">
         </div>
         <div class="buttons">
           <button class="reset" type="reset"  @click="annuler()">Reset</button>
@@ -87,6 +87,7 @@
           lieu:this.lieu,
           details:this.details,
           date_vente_previ:this.date_vente_previ,
+          prix_vente_previ:this.prix_vente_previ,
         }
          axios.post(this.$store.state.url+'/parcelles/', data ,this.headers)
          .then((response)=>{
