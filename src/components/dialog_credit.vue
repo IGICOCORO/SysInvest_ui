@@ -30,7 +30,7 @@
         <div class="group">  
             <div class="field">
               <label for="details">Nombre Total de jours du crédit:</label>
-              <input type="text" id="nbre_jours_total" v-model="nbre_jours_total" >
+              <input type="number" id="nbre_jours_total" v-model="nbre_jours_total" >
             </div>
              <div class="field">
               <label for="details">Délais de récupération d'intérêt:</label>
