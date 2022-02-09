@@ -1,7 +1,7 @@
 <template>
 	<div class="popup-body">
       <div class="absolue">
-        <button class="close" @click="close">&times</button>
+        <button class="close" @click="close">X</button>
       </div>
       <center>
         <h2>Income</h2>
@@ -9,29 +9,15 @@
       <form method="post">
         <div class="field">
           <label>Montant:</label>
+          <input type="number"  v-model="montant">
         </div>
         <div class="field">
           <label for="montant">Source:</label>
-          <input type="number" id="montant" v-model="montant" autocomplete="off" min=10000 step="10000">
+          <input type="text"  v-model="source">
         </div>
         <div class="field">
-          <label>date d’achat :</label>
-        </div>
-        <div class="field">
-          <label for="details">Autres dépenses:</label>
-          <textarea id="details" v-model="details"></textarea>
-        </div> 
-         <div class="field">
-          <label for="details">Notes:</label>
-          <textarea id="details" v-model="details"></textarea>
-        </div>
-        <div class="field">
-          <label for="details">Date de vente prévisionnelle:</label>
-          <textarea id="details" v-model="details"></textarea>
-        </div>
-        <div class="field">
-          <label for="details">Prix de vente unitaire prévisionnelle :</label>
-          <textarea id="details" v-model="details"></textarea>
+          <label>c'est une dette:</label>
+           <input type="checkbox"  v-model="is_dette">
         </div>
         <div class="buttons">
           <button type="reset">Reset</button>
