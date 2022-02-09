@@ -1,14 +1,14 @@
 <template>
     <div class="popup-body">
         <div class="overlay"></div>
-        <div class="modale">
+        <div class="modaleOutcome">
             <div class="absolue">
                 <button class="close" @click="close">X</button>
             </div>
-            <form class="form">
+            <form class="formOutcome">
                     <div class="field">
                         <label>raison:</label>
-                        <input type="text" v-model="quantite">
+                        <input type="text" v-model="raison">
                     </div>
                     <div class="field">
                         <label for="montant">Montant :</label>
@@ -35,7 +35,7 @@ import axios from "axios"
 export default {
     data() {
         return {
-            raison: "vhjvfghfgh",
+            raison: "",
             montant: null,
             partenaire: null,
             date: null,
@@ -106,7 +106,7 @@ export default {
     right: 0;
 }
 
-.form {
+.formOutcome {
     display: flex;
     flex-direction:column;
 }
@@ -114,7 +114,7 @@ export default {
   margin-left:60px
 }
 
-.modale {
+.modaleOutcome {
     background: #fff;
     height: 500px;
     width: 400px;

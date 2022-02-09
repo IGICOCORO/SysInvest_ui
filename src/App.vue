@@ -21,8 +21,9 @@ export default {
   components:{Login, TopBar, NavBar},
  watch:{
     "$store.state.user":{
+      deep:true,
       handler(new_val){
-        if(!new_val){
+        if(!! new_val){
           localStorage.setItem('user', JSON.stringify(new_val));
         } else {
           localStorage.removeItem('user')

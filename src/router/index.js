@@ -17,8 +17,8 @@ const routes = [
   { path: '/credits', name: 'credits', component: Credits},
   { path: '/parcelle', name: 'parcelle', component: Parcelle},
   { path: '/investotres', name: 'investotres', component: investotres},
-  { path: '/incomes', name: 'income', component: Income},
-  { path: '/outcomes', name: 'outcome', component: Outcome},
+  { path: '/income', name: 'income', component: Income},
+  { path: '/outcome', name: 'outcome', component: Outcome},
   { path: '/dettes', name: 'dettes', component: Dettes},
 
 ]

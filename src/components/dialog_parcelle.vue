@@ -5,9 +5,6 @@
       <div class="absolue">
         <button class="close" @click="close">X</button>
       </div>
-      <center>
-        <h2>Parcelle</h2>
-      </center>
       <form class="form">
         <div class="group"> 
         <div class="field">
@@ -45,7 +42,7 @@
           <input type="number" v-model="prix_vente_previ">
         </div>
         <div class="buttons">
-          <button class="reset" type="reset"  @click="annuler()">Reset</button>
+          <button class="reset" type="reset">Reset</button>
           <button  class="submit"  type="submit" @close="close" @click.prevent="submitAutresInvest()">Soumettre</button>
         </div>
       </div>

@@ -1,7 +1,7 @@
 <template>
 	<div class="popup-body">
     <div class="overlay"></div>
-    <div class="modale">
+    <div class="modaleCredit">
       <div class="absolue">
         <button  class="close" @click="close">X</button>
       </div>
@@ -132,7 +132,7 @@ computed:{
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr 1fr;
 }
-.modale{
+.modaleCredit{
   background:#fff;
   height:500px;
   width:700px;
