@@ -26,14 +26,14 @@
                         <td>{{ moto.prix_vente_unitaire_previ }}</td>
                         <td>
                             <button class="delete" @click="deleteMoto(moto)"><i class="fa fa-trash"></i></button>
-                            <button class="edit"><i class="fa fa-edit"></i></button>
+                            <button class="edit" @click="edit(moto)" ><i class="fa fa-edit"></i></button>
                             <button class="read"><i class="fa fa-eye"></i></button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <DialogMoto v-show="isModalVisible" @close="closeModal" />
+        <DialogMoto :item="item_prop" v-show="isModalVisible" @close="closeModal" />
     </div>
 </template>
 <script>
@@ -46,6 +46,7 @@ export default {
     data() {
         return {
             quantite: null,
+            item_prop:Object,
             prix_achat_unitaire: null,
             date_achat: null,
             autres_depenses: null,
@@ -57,6 +58,7 @@ export default {
             error: ''
         }
     },
+  
     computed: {
         headers() {
             return {
@@ -98,7 +100,15 @@ export default {
         },
         closeModal() {
             this.isModalVisible = false;
-        }
+        },
+        edit(item){
+            console.log(item)
+          
+            this.isModalVisible = true;
+            this.$router.push('/motos/'+ item.id)
+            this.item_prop = item
+            console.log(this.item_prop.autres_depenses)
+        },
     },
     mounted() {
         this.fetchMoto()

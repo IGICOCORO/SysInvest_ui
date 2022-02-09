@@ -13,11 +13,12 @@ const routes = [
   { path: '/',name: 'Home',component: Home },
   { path: '/vehicules', name: 'vehicules', component: Vehicules},
   { path: '/motos', name: 'motos', component: Motos},
+  { path: '/motos/:id', name: 'modify', component: Motos},
   { path: '/credits', name: 'credits', component: Credits},
   { path: '/parcelle', name: 'parcelle', component: Parcelle},
   { path: '/investotres', name: 'investotres', component: investotres},
-  { path: '/income', name: 'income', component: Income},
-  { path: '/outcome', name: 'outcome', component: Outcome},
+  { path: '/incomes', name: 'income', component: Income},
+  { path: '/outcomes', name: 'outcome', component: Outcome},
   { path: '/dettes', name: 'dettes', component: Dettes},
 
 ]

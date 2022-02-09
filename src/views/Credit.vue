@@ -22,7 +22,7 @@
                         <td>{{ credit.interet_total }}</td>
                         <td>{{ credit.date_debut_credit }}</td>
                         <td>{{ credit.details }}</td>
-                        <td>{{ credit.nombre_jours_total }}</td>
+                        <td>{{ credit.nombre_jours_total }} jours</td>
                         <td>{{ credit.delais_recuperation }}</td>
                         <td>
                             <button class="delete" @click="deleteCredit(credit)"><i class="fa fa-trash"></i></button>

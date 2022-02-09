@@ -21,7 +21,7 @@
             <td>
               <button class="delete"><i class="fa fa-trash"></i></button>
               <button class="edit"><i class="fa fa-edit"></i></button>
-              <button class="read"><i class="fa fa-eye"></i></button>
+              <button class="read"><i class="fa fa-check"></i></button>
             </td>
           </tr>
         </tbody>
