@@ -13,6 +13,8 @@ export default createStore({
    incomes :[],
    importdartobuja:[],
    importjaptodar:[],
+   prets:[],
+   emprunts:[],
    vehicules:[],
    liste_users : [
         {

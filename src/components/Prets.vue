@@ -5,21 +5,19 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Source</th>
+                        <th>Nom du Donateur</th>
                         <th>Montant</th>
-                        <th>Partenaire</th>
                         <th>Date</th>
                         <th>options</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for=" income in incomes" :key="income">
-                        <td>{{ income.source }}</td>
-                        <td>{{ income.montant }}</td>
-                        <td>{{ income.partenaire }}</td>
-                        <td>{{ income.date }}</td>
+                    <tr v-for=" pret in prets" :key="pret">
+                        <td>{{ pret.nom_donateur }}</td>
+                        <td>{{ pret.montant }}</td>
+                        <td>{{ pret.date }}</td>
                         <td>
-                            <button class="delete" @click=" deleteIncome(income)"><i class="fa fa-trash"></i></button>
+                            <button class="delete" @click=" deletePret(pret)"><i class="fa fa-trash"></i></button>
                             <button class="edit" @click="edit()"><i class="fa fa-edit"></i></button>
                             <button class="read"><i class="fa fa-eye"></i></button>
                         </td>
@@ -27,23 +25,22 @@
                 </tbody>
             </table>
         </div>
-        <DialogIncome v-show="isModalVisible" @close="closeModal" />
+        <DialogPret v-show="isModalVisible" @close="closeModal" />
     </div>
 </template>
 <script>
-import DialogIncome from '../components/dialog_income.vue';
+import DialogPret from '../components/dialog_pret.vue';
 import axios from "axios"
 export default {
     components: {
-        DialogIncome,
+        DialogPret,
     },
     data() {
         return {
-            source: "",
+            nom_donateur: null,
             montant: null,
-            partenaire: null,
             date : null,
-            incomes: [],
+            prets: [],
             isModalVisible: false,
             error: ''
         }
@@ -59,27 +56,27 @@ export default {
         }
     },
     watch: {
-        "$store.state.incomes"(new_val) {
-            this.incomes = new_val
+        "$store.state.prets"(new_val) {
+            this.prets = new_val
         }
     },
     methods: {
-        fetchIncome() {
-            axios.get(this.$store.state.url + '/incomes/', this.headers)
+        fetchPret() {
+            axios.get(this.$store.state.url + '/Pret/', this.headers)
                 .then((response) => {
-                    this.$store.state.incomes = response.data.results
+                    this.$store.state.prets = response.data.results
                     console.log(response.data.results)
                 }).catch((error) => {
                     console.log(error)
                 })
         },
-        deleteIncome(income) {
-            if (confirm(`Voulez vous vraiment supprimer cet Income?`)) {
-                axios.delete(this.$store.state.url + `/incomes/${income.id}/`, this.headers)
+        deletePret(pret) {
+            if (confirm(`Voulez vous vraiment supprimer ce Pret?`)) {
+                axios.delete(this.$store.state.url + `/Pret/${pret.id}/`, this.headers)
                     .then((response) => {
                         console.log(response.data)
-                        this.$store.state.incomes.splice(
-                            this.$store.state.incomes.indexOf(income), 1)
+                        this.$store.state.prets.splice(
+                            this.$store.state.prets.indexOf(pret), 1)
                     }).catch((error) => {
                         console.log(error)
                     })
@@ -101,7 +98,7 @@ export default {
         },*/
     },
     mounted() {
-        this.fetchIncome()
+        this.fetchPret()
     }
 };
 </script>

@@ -25,7 +25,7 @@
                         <td>{{ item.date_achat }}</td>
                         <td>{{ item.date_arrivee }}</td>
                         <td>
-                            <button class="delete" @click=" deleteIncome(item)"><i class="fa fa-trash"></i></button>
+                            <button class="delete" @click=" deleteImport(item)"><i class="fa fa-trash"></i></button>
                             <button class="edit" @click="edit()"><i class="fa fa-edit"></i></button>
                             <button class="read"><i class="fa fa-check"></i></button>
                         </td>
@@ -73,7 +73,7 @@ export default {
         }
     },
     methods: {
-        fetchIncome() {
+        fetchImport() {
             axios.get(this.$store.state.url + '/importation_japon_to_darEsSalam/', this.headers)
                 .then((response) => {
                     this.$store.state.importjaptodar = response.data.results
@@ -82,7 +82,7 @@ export default {
                     console.log(error)
                 })
         },
-        deleteIncome(item) {
+        deleteImport(item) {
             if (confirm(`Voulez vous vraiment supprimer cet Importation?`)) {
                 axios.delete(this.$store.state.url + `/importation_japon_to_darEsSalam/${item.id}/`, this.headers)
                     .then((response) => {
@@ -110,7 +110,7 @@ export default {
         },*/
     },
     mounted() {
-        this.fetchIncome()
+        this.fetchImport()
     }
 };
 </script>
