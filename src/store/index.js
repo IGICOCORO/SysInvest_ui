@@ -10,6 +10,10 @@ export default createStore({
    parcelles:[],
    autres_investissements:[],
    outcomes :[],
+   incomes :[],
+   importdartobuja:[],
+   importjaptodar:[],
+   vehicules:[],
    liste_users : [
         {
           username : "guy",

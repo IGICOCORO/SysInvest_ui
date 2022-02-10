@@ -8,7 +8,7 @@
                         <th>Demandeur</th>
                         <th>Montant </th>
                         <th>Intérêt total</th>
-                        <th>Date de début du crédit </th>
+                        <th>Début du crédit </th>
                         <th>Notes</th>
                         <th>Nombre Total de jours </th>
                         <th>Délais de récupération d'intérêt </th>

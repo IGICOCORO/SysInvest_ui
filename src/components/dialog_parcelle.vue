@@ -43,7 +43,7 @@
         </div>
         <div class="buttons">
           <button class="reset" type="reset">Reset</button>
-          <button  class="submit"  type="submit" @close="close" @click.prevent="submitAutresInvest()">Soumettre</button>
+          <button  class="submit"  type="submit" @close="close" @click.prevent="submitParcelle()">Soumettre</button>
         </div>
       </div>
       </form>
@@ -75,7 +75,7 @@
     }
     },
     methods: {
-      submitAutresInvest(){
+      submitParcelle(){
         let data = {
           nombres_ares:this.nombres_ares,
           prix_achat_par_are:this.prix_achat_par_are,

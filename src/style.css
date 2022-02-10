@@ -16,8 +16,6 @@
 .field {
     display: inline-grid;
     width: 100%;
-}
-.field{
     margin: 15px 0;
 }
 input, select{
@@ -41,7 +39,7 @@ button{
 }
 .create:hover{
     border-bottom: 2px solid #C4CBD2;
-    background-color: #C4CBD2;
+    background-color: #C4CBD5;
 }
 
 button:active{

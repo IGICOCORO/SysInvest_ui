@@ -7,14 +7,18 @@
             </div>
             <form class="formOutcome">
                     <div class="field">
-                        <label>raison:</label>
+                        <label>Raison:</label>
                         <input type="text" v-model="raison">
                     </div>
                     <div class="field">
                         <label for="montant">Montant :</label>
                         <input type="number" v-model="montant">
                     </div>
-                    <div class="field">
+                     <div class="check" >
+                        <label>Est-il une dette?</label>
+                        <input @click="checkDette" id="checked" type="checkbox">
+                    </div>
+                    <div class="field" v-if="checked">
                         <label>Partenaire:</label>
                         <input type="text" v-model="partenaire">
                     </div>
@@ -39,6 +43,7 @@ export default {
             montant: null,
             partenaire: null,
             date: null,
+            checked : false,
         }
     },
    computed: {
@@ -68,6 +73,12 @@ export default {
         },
         close() {
             this.$emit('close');
+        },
+        checkDette(){
+            let dd = document.getElementById("checked")
+            console.log(dd)
+            console.log(dd.checked)
+            this.checked = dd.checked
         }
     },
 };
@@ -131,5 +142,15 @@ export default {
     width: 30px;
     height: 30px;
     border-radius: 10px;
+}
+.check{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    margin-right:100px;
+}
+#checked{
+    margin-left:5px;
 }
 </style>
