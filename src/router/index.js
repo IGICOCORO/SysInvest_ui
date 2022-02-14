@@ -13,7 +13,6 @@ const routes = [
   { path: '/',name: 'Home',component: Home },
   { path: '/vehicules', name: 'vehicules', component: Vehicules},
   { path: '/motos', name: 'motos', component: Motos},
-  { path: '/motos/:id', name: 'modify', component: Motos},
   { path: '/credits', name: 'credits', component: Credits},
   { path: '/parcelle', name: 'parcelle', component: Parcelle},
   { path: '/investotres', name: 'investotres', component: investotres},

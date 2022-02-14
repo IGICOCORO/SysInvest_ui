@@ -16,17 +16,6 @@ export default createStore({
    prets:[],
    emprunts:[],
    vehicules:[],
-   liste_users : [
-        {
-          username : "guy",
-          password : "12345",
-        },
-         {
-          username : "hogi",
-          password : "12345",
-        },
-        
-      ],
     },
   mutations: {
   },

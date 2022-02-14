@@ -26,7 +26,7 @@
                         <td>{{ moto.prix_vente_unitaire_previ }}</td>
                         <td>
                             <button class="delete" @click="deleteMoto(moto)"><i class="fa fa-trash"></i></button>
-                            <button class="edit" @click="edit(moto)" ><i class="fa fa-edit"></i></button>
+                            <button class="edit" @click="edit(item)" ><i class="fa fa-edit"></i></button>
                             <button class="read"><i class="fa fa-eye"></i></button>
                         </td>
                     </tr>
@@ -51,6 +51,7 @@ export default {
             date_achat: null,
             autres_depenses: null,
             details: null,
+            active_item:null,
             date_vente_previ: null,
             prix_vente_unitaire_previ: null,
             motos: [],
@@ -72,6 +73,9 @@ export default {
         "$store.state.motos"(new_val) {
             this.motos = new_val
         }
+    },
+     mounted() {
+        this.fetchMoto()
     },
     methods: {
         fetchMoto() {
@@ -101,19 +105,12 @@ export default {
         closeModal() {
             this.isModalVisible = false;
         },
-        edit(item){
-            console.log(item)
-          
-            this.isModalVisible = true;
-            this.$router.push('/motos/'+ item.id)
-            this.item_prop = item
-            console.log(this.item_prop.autres_depenses)
+       edit(item){
+            this.active_item = item
+            this.isModalVisible = true
         },
-    },
-    mounted() {
-        this.fetchMoto()
-    }
-};
+   }
+}
 </script>
 <style>
 .motos {

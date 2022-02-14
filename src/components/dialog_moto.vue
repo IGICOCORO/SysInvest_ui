@@ -61,7 +61,7 @@ export default {
         }
     },
     props: {
-        item: Object,
+       item:{type:Object, required:true}
     },
    computed: {
         headers() {
@@ -106,7 +106,10 @@ export default {
         },
         close() {
             this.$emit('close');
-        }
+        },
+        edit(item){
+            this.$emit("edit", item)
+        },
     },
 };
 </script>
