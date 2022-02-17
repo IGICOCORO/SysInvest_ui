@@ -6,13 +6,13 @@
                 <thead>
                     <tr>
                         <th>Nombre d’ares</th>
-                        <th>P.A </th>
-                        <th>date</th>
+                        <th>PA</th>
+                        <th>date d’achat </th>
                         <th>Dépenses</th>
                         <th>Lieu </th>
                         <th>Details </th>
                         <th>Date de vente prévisionnelle </th>
-                        <th>PV prévisionnelle </th>
+                        <th>PVP</th>
                         <th>options</th>
                     </tr>
                 </thead>

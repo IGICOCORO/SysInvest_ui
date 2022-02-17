@@ -7,7 +7,7 @@
                     <tr>
                         <th>Nom du Donateur</th>
                         <th>Montant</th>
-                        <th>Date</th>
+                        <th>Date du prêt</th>
                         <th>options</th>
                     </tr>
                 </thead>

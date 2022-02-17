@@ -6,12 +6,12 @@
                 <thead>
                     <tr>
                         <th>Quantite</th>
-                        <th>PA Unitaire</th>
+                        <th>PAU</th>
                         <th>Date d'achat</th>
                         <th>Autres dépenses</th>
                         <th>Détails</th>
                         <th>Date de vente prévisionnelle </th>
-                        <th>PV prévisionnelle </th>
+                        <th>PVP</th>
                         <th>options</th>
                     </tr>
                 </thead>

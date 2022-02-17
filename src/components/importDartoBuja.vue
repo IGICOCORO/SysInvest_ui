@@ -9,9 +9,9 @@
                         <th>Taux</th>
                         <th>Dédouanement</th>
                         <th>Dépenses</th>
-                        <th>Notes</th>
+                        <th>Détails</th>
                         <th>Date de vente prévisionnelle</th>
-                        <th>Prix de vente prévisionnelle</th>
+                        <th>PVP</th>
                         <th>options</th>
                     </tr>
                 </thead>

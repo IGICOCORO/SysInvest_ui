@@ -7,12 +7,12 @@
                     <tr>
                         <th>Modèle</th>
                         <th>Plaque </th>
-                        <th>P.A</th>
+                        <th>PA</th>
                         <th>Date d’achat</th>
                         <th>Dépenses  </th>
-                        <th>Details </th>
+                        <th>Détails </th>
                         <th>Date de vente prévisionnelle </th>
-                        <th>PV prévisionnelle </th>
+                        <th>PVP</th>
                         <th>Options</th>
                     </tr>
                 </thead>
