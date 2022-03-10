@@ -5,7 +5,7 @@
                 <div class="count_view red">
                     <div class="count_list">
                         <p>Capital</p>
-                        <h2>{{ $store.state.capital[0].solde ?? 0 }}</h2>
+                        <h2>454656151</h2>
                     </div>
                     <div class="detail_list_icon">
                         <i class="fa fa-dollar-sign pink"></i>
@@ -56,15 +56,6 @@ export default {
         return {
             capital:[],
             solde: null
-        }
-    },
-    computed: {
-        headers() {
-            return {
-                headers: {
-                    "Authorization": "Bearer " + this.$store.state.user.access
-                }
-            }
         }
     },
     methods: {

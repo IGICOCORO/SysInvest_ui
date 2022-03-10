@@ -14,12 +14,11 @@
                 <tbody>
                     <tr v-for=" pret in prets" :key="pret">
                         <td>{{ pret.nom_donateur }}</td>
-                        <td>{{ pret.montant }}</td>
-                        <td>{{ pret.date }}</td>
+                        <td>{{ money(pret.montant) }} Fbu</td>
+                        <td>{{ datetime(pret.date) }}</td>
                         <td>
                             <button class="delete" @click=" deletePret(pret)"><i class="fa fa-trash"></i></button>
                             <button class="edit" @click="edit()"><i class="fa fa-edit"></i></button>
-                            <button class="read"><i class="fa fa-eye"></i></button>
                         </td>
                     </tr>
                 </tbody>
@@ -43,16 +42,6 @@ export default {
             prets: [],
             isModalVisible: false,
             error: ''
-        }
-    },
-
-    computed: {
-        headers() {
-            return {
-                headers: {
-                    "Authorization": "Bearer " + this.$store.state.user.access
-                }
-            }
         }
     },
     watch: {

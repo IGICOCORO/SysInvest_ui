@@ -19,17 +19,16 @@
                 <tbody>
                     <tr v-for=" parcelle in parcelles" :key="parcelle">
                         <td>{{ parcelle.nombres_ares }}</td>
-                        <td>{{ parcelle.prix_achat_par_are }}</td>
-                        <td>{{ parcelle.date_achat }}</td>
-                        <td>{{ parcelle.autres_depenses }}</td>
+                        <td>{{ money(parcelle.prix_achat_par_are) }}</td>
+                        <td>{{ datetime(parcelle.date_achat) }}</td>
+                        <td>{{ money(parcelle.autres_depenses) }}</td>
                         <td>{{ parcelle.lieu }}</td>
                         <td>{{ parcelle.details }}</td>
                         <td>{{ parcelle.date_vente_previ }}</td>
-                        <td>{{ parcelle.prix_vente_previ }}</td>
+                        <td>{{ money(parcelle.prix_vente_previ) }}</td>
                         <td>
                             <button class="delete" @click="deleteParcelle(parcelle)"><i class="fa fa-trash"></i></button>
                             <button class="edit"><i class="fa fa-edit"></i></button>
-                            <button class="read"><i class="fa fa-eye"></i></button>
                         </td>
                     </tr>
                 </tbody>
@@ -58,15 +57,6 @@ export default {
             parcelles: [],
             isModalVisible: false,
             error: ''
-        }
-    },
-    computed: {
-        headers() {
-            return {
-                headers: {
-                    "Authorization": "Bearer " + this.$store.state.user.access
-                }
-            }
         }
     },
     watch: {

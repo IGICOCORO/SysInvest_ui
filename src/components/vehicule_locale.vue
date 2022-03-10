@@ -20,16 +20,15 @@
                     <tr v-for=" vehicule in vehicules" :key="vehicule">
                         <td>{{ vehicule.modele }}</td>
                         <td>{{ vehicule.plaque }}</td>
-                        <td>{{ vehicule.prix_achat }}</td>
-                        <td>{{ vehicule.date_achat }}</td>
-                        <td>{{ vehicule.autres_depenses }}</td>
+                        <td>{{ money(vehicule.prix_achat) }} Fbu</td>
+                        <td>{{ datetime(vehicule.date_achat) }}</td>
+                        <td>{{ money(vehicule.autres_depenses) }} FBu</td>
                         <td>{{ vehicule.details }}</td>
                         <td>{{ vehicule.date_vente }}</td>
-                        <td>{{ vehicule.prix_vente_previ }}</td>
+                        <td>{{ money(vehicule.prix_vente_previ) }} Fbu</td>
                         <td>
                             <button class="delete" @click="deleteVehicule(vehicule)"><i class="fa fa-trash"></i></button>
                             <button class="edit"><i class="fa fa-edit"></i></button>
-                            <button class="read"><i class="fa fa-eye"></i></button>
                         </td>
                     </tr>
                 </tbody>
@@ -58,15 +57,6 @@ export default {
             vehicules: [],
             isModalVisible: false,
             error: ''
-        }
-    },
-    computed: {
-        headers() {
-            return {
-                headers: {
-                    "Authorization": "Bearer " + this.$store.state.user.access
-                }
-            }
         }
     },
     watch: {

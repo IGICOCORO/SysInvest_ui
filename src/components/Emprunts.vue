@@ -14,12 +14,11 @@
                 <tbody>
                     <tr v-for=" emprunt in emprunts" :key="emprunt">
                         <td>{{ emprunt.nom_donataire }}</td>
-                        <td>{{ emprunt.montant }}</td>
-                        <td>{{ emprunt.date }}</td>
+                        <td>{{ money(emprunt.montant) }} Fbu</td>
+                        <td>{{ datetime(emprunt.date) }}</td>
                         <td>
                             <button class="delete" @click=" deleteEmprunt(emprunt)"><i class="fa fa-trash"></i></button>
                             <button class="edit" @click="edit()"><i class="fa fa-edit"></i></button>
-                            <button class="read"><i class="fa fa-eye"></i></button>
                         </td>
                     </tr>
                 </tbody>
@@ -43,16 +42,6 @@ export default {
             emprunts: [],
             isModalVisible: false,
             error: ''
-        }
-    },
-
-    computed: {
-        headers() {
-            return {
-                headers: {
-                    "Authorization": "Bearer " + this.$store.state.user.access
-                }
-            }
         }
     },
     watch: {

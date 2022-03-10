@@ -23,7 +23,6 @@
                         <td>
                             <button class="delete" @click="deleteInvestotre(item)"><i class="fa fa-trash"></i></button>
                             <button class="edit"><i class="fa fa-edit"></i></button>
-                            <button class="read"><i class="fa fa-eye"></i></button>
                         </td>
                     </tr>
                 </tbody>
@@ -49,15 +48,6 @@ export default {
             autres_investissements: [],
             isModalVisible: false,
             error: ''
-        }
-    },
-    computed: {
-        headers() {
-            return {
-                headers: {
-                    "Authorization": "Bearer " + this.$store.state.user.access
-                }
-            }
         }
     },
     watch: {
@@ -100,5 +90,5 @@ export default {
     }
 };
 </script>
-<style>
+<style scoped>
 </style>

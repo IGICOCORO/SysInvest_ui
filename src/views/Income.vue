@@ -15,13 +15,12 @@
                 <tbody>
                     <tr v-for=" income in incomes" :key="income">
                         <td>{{ income.source }}</td>
-                        <td>{{ income.montant }}</td>
+                        <td>{{ money(income.montant) }} Fbu</td>
                         <td>{{ income.partenaire }}</td>
-                        <td>{{ income.date }}</td>
+                        <td>{{ datetime(income.date) }}</td>
                         <td>
                             <button class="delete" @click=" deleteIncome(income)"><i class="fa fa-trash"></i></button>
                             <button class="edit" @click="edit()"><i class="fa fa-edit"></i></button>
-                            <button class="read"><i class="fa fa-eye"></i></button>
                         </td>
                     </tr>
                 </tbody>
@@ -46,16 +45,6 @@ export default {
             incomes: [],
             isModalVisible: false,
             error: ''
-        }
-    },
-
-    computed: {
-        headers() {
-            return {
-                headers: {
-                    "Authorization": "Bearer " + this.$store.state.user.access
-                }
-            }
         }
     },
     watch: {

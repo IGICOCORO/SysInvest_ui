@@ -18,16 +18,15 @@
                 <tbody>
                     <tr v-for=" credit in credits" :key="credit">
                         <td>{{ credit.nom_demandeur }}</td>
-                        <td>{{ credit.montant }}</td>
-                        <td>{{ credit.interet_total }}</td>
-                        <td>{{ credit.date_debut_credit }}</td>
+                        <td>{{ money(credit.montant) }} Fbu</td>
+                        <td>{{ money(credit.interet_total) }} Fbu</td>
+                        <td>{{ datetime(credit.date_debut_credit) }}</td>
                         <td>{{ credit.details }}</td>
                         <td>{{ credit.nombre_jours_total }} jours</td>
                         <td>{{ credit.delais_recuperation }}</td>
                         <td>
                             <button class="delete" @click="deleteCredit(credit)"><i class="fa fa-trash"></i></button>
                             <button class="edit"><i class="fa fa-edit"></i></button>
-                            <button class="read"><i class="fa fa-eye"></i></button>
                         </td>
                     </tr>
                 </tbody>

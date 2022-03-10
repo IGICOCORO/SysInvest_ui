@@ -11,23 +11,23 @@
                         <th>Autres dépenses</th>
                         <th>Détails</th>
                         <th>Date de vente prévisionnelle </th>
-                        <th>PVP</th>
+                        <th>PVUP</th>
                         <th>options</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for=" moto in motos" :key="moto">
+                    <tr v-for=" moto in motos" :key="moto.id">
                         <td>{{ moto.quantite }}</td>
-                        <td>{{ moto.prix_achat_unitaire }}</td>
-                        <td>{{ moto.date_achat }}</td>
-                        <td>{{ moto.autres_depenses }}</td>
+                        <td>{{ money(moto.prix_achat_unitaire) }} Fbu</td>
+                        <td>{{ datetime(moto.date_achat) }}</td>
+                        <td>{{ money(moto.autres_depenses) }} Fbu</td>
                         <td>{{ moto.details }}</td>
                         <td>{{ moto.date_vente_previ }}</td>
-                        <td>{{ moto.prix_vente_unitaire_previ }}</td>
+                        <td>{{ money(moto.prix_vente_unitaire_previ) }} Fbu</td>
                         <td>
                             <button class="delete" @click="deleteMoto(moto)"><i class="fa fa-trash"></i></button>
-                            <button class="edit" @click="edit(item)" ><i class="fa fa-edit"></i></button>
-                            <button class="read"><i class="fa fa-eye"></i></button>
+                            <button class="edit" @click="edit(item)" ><i class="fa fa-edit"></i>
+                            </button>
                         </td>
                     </tr>
                 </tbody>
@@ -57,16 +57,6 @@ export default {
             motos: [],
             isModalVisible: false,
             error: ''
-        }
-    },
-  
-    computed: {
-        headers() {
-            return {
-                headers: {
-                    "Authorization": "Bearer " + this.$store.state.user.access
-                }
-            }
         }
     },
     watch: {

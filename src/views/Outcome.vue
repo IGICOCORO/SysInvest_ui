@@ -15,13 +15,12 @@
                 <tbody>
                     <tr v-for=" outcome in outcomes" :key="outcome">
                         <td>{{ outcome.raison }}</td>
-                        <td>{{ outcome.montant }}</td>
+                        <td>{{ money(outcome.montant) }}</td>
                         <td>{{ outcome.partenaire }}</td>
-                        <td>{{ outcome.date }}</td>
+                        <td>{{ date(outcome.date) }}</td>
                         <td>
                             <button class="delete" @click="deleteOutCome(outcome)"><i class="fa fa-trash"></i></button>
                             <button class="edit" @click="edit(moto)"><i class="fa fa-edit"></i></button>
-                            <button class="read"><i class="fa fa-eye"></i></button>
                         </td>
                     </tr>
                 </tbody>
@@ -46,16 +45,6 @@ export default {
             outcomes: [],
             isModalVisible: false,
             error: ''
-        }
-    },
-
-    computed: {
-        headers() {
-            return {
-                headers: {
-                    "Authorization": "Bearer " + this.$store.state.user.access
-                }
-            }
         }
     },
     watch: {
