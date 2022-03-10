@@ -5,23 +5,26 @@
             <div class="absolue">
                 <button class="close" @click="close">X</button>
             </div>
+            <center>
+                <h2>Emprunter</h2>
+            </center>
             <form class="formOutcome">
-                    <div class="field">
-                        <label>Nom du Donataire:</label>
-                        <input type="text" v-model="nom_donataire">
-                    </div>
-                    <div class="field">
-                        <label for="montant">Montant :</label>
-                        <input type="number" v-model="montant">
-                    </div>
-                     <div class="field">
-                        <label>Date:</label>
-                        <input type="date" v-model="date">
-                    </div>
-                    <div class="buttons">
-                        <button class="reset" type="reset">Reset</button>
-                        <button class="submit" type="submit" @close="close" @click.prevent="submitEmprunt()">Soumettre</button>
-                    </div>
+                <div class="field">
+                    <label>Nom du Donataire:</label>
+                    <input type="text" v-model="nom_donataire">
+                </div>
+                <div class="field">
+                    <label for="montant">Montant :</label>
+                    <input type="number" v-model="montant">
+                </div>
+                <div class="field">
+                    <label>Date:</label>
+                    <input type="date" v-model="date">
+                </div>
+                <div class="buttons">
+                    <button class="reset" type="reset">Reset</button>
+                    <button class="submit" type="submit" @close="close" @click.prevent="submitEmprunt()">Soumettre</button>
+                </div>
             </form>
         </div>
     </div>
@@ -34,11 +37,11 @@ export default {
             nom_donataire: null,
             montant: null,
             date: null,
-            emprunts:[],
-            error:''
+            emprunts: [],
+            error: ''
         }
     },
-   computed: {
+    computed: {
         headers() {
             return {
                 headers: {
@@ -104,10 +107,11 @@ export default {
 
 .formOutcome {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
 }
-.buttons{
-  margin-left:60px
+
+.buttons {
+    margin-left: 60px
 }
 
 .modaleOutcome {
@@ -128,14 +132,16 @@ export default {
     height: 30px;
     border-radius: 10px;
 }
-.check{
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    justify-content:center;
-    margin-right:100px;
+
+.check {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-right: 100px;
 }
-#checked{
-    margin-left:5px;
+
+#checked {
+    margin-left: 5px;
 }
 </style>

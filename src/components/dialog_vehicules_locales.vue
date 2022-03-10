@@ -5,6 +5,9 @@
             <div class="absolue">
                 <button class="close" @click="close">X</button>
             </div>
+            <center>
+                <h2>Véhicules locales</h2>
+            </center>
             <form class="form">
                 <div class="group">
                     <div class="field">
@@ -25,7 +28,7 @@
                     </div>
                 </div>
                 <div class="group">
-                   <div class="field">
+                    <div class="field">
                         <label for="details">Autres dépenses :</label>
                         <input type="number" v-model="autres_depenses">
                     </div>

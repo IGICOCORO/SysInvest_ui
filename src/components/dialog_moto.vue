@@ -5,6 +5,9 @@
             <div class="absolue">
                 <button class="close" @click="close">X</button>
             </div>
+            <center>
+                <h2>Moto</h2>
+            </center>
             <form class="form">
                 <div class="group">
                     <div class="field">
@@ -61,7 +64,7 @@ export default {
         }
     },
     props: {
-       item:{type:Object, required:true}
+        item: { type: Object, required: true }
     },
     mounted() {
         console.log(this.item)
@@ -98,7 +101,7 @@ export default {
         close() {
             this.$emit('close');
         },
-        edit(item){
+        edit(item) {
             this.$emit("edit", item)
         },
     },

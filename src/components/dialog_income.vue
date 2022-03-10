@@ -5,31 +5,34 @@
             <div class="absolue">
                 <button class="close" @click="close">X</button>
             </div>
+            <center>
+                <h2>Income</h2>
+            </center>
             <form class="formOutcome">
-                    <div class="field">
-                        <label>Source:</label>
-                        <input type="text" v-model="source">
-                    </div>
-                    <div class="field">
-                        <label for="montant">Montant:</label>
-                        <input type="number" v-model="montant">
-                    </div>
-                     <div class="check" >
-                        <label>Est-il une dette</label>
-                        <input @click="checkDette" id="checked" type="checkbox">
-                    </div>
-                    <div class="field" v-if="checked">
-                        <label>Partenaire:</label>
-                        <input type="text" v-model="partenaire">
-                    </div>
-                     <div class="field">
-                        <label>Date:</label>
-                        <input type="date" v-model="date">
-                    </div>
-                    <div class="buttons">
-                        <button class="reset" type="reset">Reset</button>
-                        <button class="submit" type="submit" @close="close" @click.prevent="submitIncome()">Soumettre</button>
-                    </div>
+                <div class="field">
+                    <label>Source:</label>
+                    <input type="text" v-model="source">
+                </div>
+                <div class="field">
+                    <label for="montant">Montant:</label>
+                    <input type="number" v-model="montant">
+                </div>
+                <div class="check">
+                    <label>Est-il une dette</label>
+                    <input @click="checkDette" id="checked" type="checkbox">
+                </div>
+                <div class="field" v-if="checked">
+                    <label>Partenaire:</label>
+                    <input type="text" v-model="partenaire">
+                </div>
+                <div class="field">
+                    <label>Date:</label>
+                    <input type="date" v-model="date">
+                </div>
+                <div class="buttons">
+                    <button class="reset" type="reset">Reset</button>
+                    <button class="submit" type="submit" @close="close" @click.prevent="submitIncome()">Soumettre</button>
+                </div>
             </form>
         </div>
     </div>
@@ -43,10 +46,10 @@ export default {
             montant: null,
             partenaire: null,
             date: null,
-            checked : false,
+            checked: false,
         }
     },
-   computed: {
+    computed: {
         headers() {
             return {
                 headers: {
@@ -74,7 +77,7 @@ export default {
         close() {
             this.$emit('close');
         },
-        checkDette(){
+        checkDette() {
             let dd = document.getElementById("checked")
             this.checked = dd.checked
         }
@@ -117,10 +120,11 @@ export default {
 
 .formOutcome {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
 }
-.buttons{
-  margin-left:60px
+
+.buttons {
+    margin-left: 60px
 }
 
 .modaleOutcome {

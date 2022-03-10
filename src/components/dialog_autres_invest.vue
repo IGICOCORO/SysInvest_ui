@@ -6,7 +6,7 @@
         <button class="close" @click="close">X</button>
       </div>
       <center>
-        <h3>Autres Investissements</h3>
+        <h2>Autres Investissements</h2>
       </center>
       <form class="form">
          <div class="group"> 
