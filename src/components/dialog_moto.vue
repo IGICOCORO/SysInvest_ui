@@ -12,11 +12,11 @@
                         <input type="number" v-model="quantite">
                     </div>
                     <div class="field">
-                        <label for="montant">Prix :</label>
+                        <label for="montant">PAU:</label>
                         <input type="number" v-model="prix_achat">
                     </div>
                     <div class="field">
-                        <label>Date:</label>
+                        <label>Date d'achat:</label>
                         <input type="date" v-model="date_achat">
                     </div>
                     <div class="field">
@@ -30,11 +30,11 @@
                         <textarea type="text" v-model="Notes"></textarea>
                     </div>
                     <div class="field">
-                        <label for="details">Date vente :</label>
+                        <label for="details">Date vente prévisionnelle:</label>
                         <input type="date" v-model="date_vente">
                     </div>
                     <div class="field">
-                        <label for="details">PV :</label>
+                        <label for="details">PVUP:</label>
                         <input type="number" v-model="prix_vente">
                     </div>
                     <div class="buttons">
@@ -62,15 +62,6 @@ export default {
     },
     props: {
        item:{type:Object, required:true}
-    },
-   computed: {
-        headers() {
-            return {
-                headers: {
-                    "Authorization": "Bearer " + this.$store.state.user.access
-                }
-            }
-        }
     },
     mounted() {
         console.log(this.item)

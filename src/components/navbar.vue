@@ -53,21 +53,22 @@
 <style scoped>
 .navbar{
 	height: 100%;
-	width: 140px;
-	min-width: 30px;
-	position: relative;
+    width: 120px;
+    min-width: 120px;
+    position: relative;
 }
 .menus{
 	position: absolute;
-	margin-top:600px;
-	margin-left:20px;
-	width: 100%;
+    top: 15%;
+    width: 100%;
+   text-align: center;
 }
 .menu{
 	width:70px;
 	text-align: center;
 	padding: 5px 0;
 	border-radius:10px;
+	background-color: #b5b5b5;
 	box-shadow: inset 5em 1em #F1F2F3;
 	font-size:1.6em;
 }
@@ -87,9 +88,9 @@
 	width:45px;
 	text-align: center;
 	padding: 0;
+	background-color: #b5b5b5;
 	margin-top: 350px;
 	border-radius:10px;
-	box-shadow: inset 5em 1em #F1F2F3;
 	font-size:1.6em;
 }
 .menu:hover{ 

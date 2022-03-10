@@ -1,6 +1,6 @@
 @charset "UTF-8";
 :root {
-    --sans-serif:"Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --sans-serif: "abeezee" , "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --primary: blue;
 }
 *{
@@ -10,45 +10,59 @@
     outline:0;
     font-family: var(--sans-serif);
 }
+#app, .login{
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    height: 100vh;
+    overflow: hidden;
+}
 .main-content{
     display: flex;
+    height: 100vh;
 }
-.field {
-    display: inline-grid;
+.field *{
+    display: block;
     width: 100%;
-    margin:0;
 }
-input, select{
-    background-color:gainsboro;
-    font-size:20px;
+.field{
+    margin: 5px 0;
+}
+input, select, button{
+    padding: 3px;
+    font-size: 1em;
 }
 button{
-    width: 130px;
-    height: 50px;
+    background-color: cadetblue;
     border: 0px;
     color: white;
-    padding: 5px 5px;
+    padding: 5px 10px;
     margin: 5px;
+    border-radius: 5px;
 }
-.create{
-    border-radius: 30px;
-    color: black;
-    font-weight: bold;
-    font-size: 25px;
-    width: 100px;
+button.close{
+    display: block;
+    margin-left: auto!important;
+    padding: 2px 7px;
+    background-color: red;
+    box-shadow: 0 1px 3px black;
 }
-.create:hover{
-    border-bottom: 2px solid #C4CBD2;
-    background-color: #C4CBD5;
+button:hover{
+    background-color: #499b;
 }
-
 button:active{
-    background-color: rgba(62, 65, 65, 0.667);
+    background-color: #4aaa;
 }
 .logs, .logs *{
     color: red;
 }
- .popup{
+
+.active{
+  display: block;
+  visibility: visible!important;
+}
+.popup{
   position: fixed;
   top: 0;
   left: 0;
@@ -58,20 +72,32 @@ button:active{
   visibility: hidden;
   background-color: #0004;
 }
+.popup-body{
+  position: relative;
+  width: 350px;
+  background-color: white;
+  margin: 150px auto 20px auto;
+  padding: 10px 20px;
+}
+.popup form{
+  margin-top: 20px;
+}
 .popup .absolue{
   position: absolute;
   width: calc(100% - 30px);
+}
+.popup .buttons{
+  display: inline-block;
+  margin-left: auto;
 }
 table{
     width: 100%;
 }
 thead{
-    background-color: #000;
-    color: white;
+    background-color: #eee;
+    color: black;
 }
 th{
-    padding: 5px; 
+    padding: 5px;
 }
-/* .parcelles{
-     padding: 20px 10px 0 5px;
-} */
+

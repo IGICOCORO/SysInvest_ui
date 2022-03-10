@@ -19,10 +19,10 @@
                     <tr v-for=" item in importjaptodar" :key="item">
                         <td>{{ item.modele }}</td>
                         <td>{{ item.numero_chasis }}</td>
-                        <td>{{ item.prix_achat }}</td>
+                        <td>{{ money(item.prix_achat) }} Fbu</td>
                         <td>{{ item.transport }}</td>
                         <td>{{ item.taux_echange }}</td>
-                        <td>{{ item.date_achat }}</td>
+                        <td>{{ datetime(item.date_achat) }}</td>
                         <td>{{ item.date_arrivee }}</td>
                         <td>
                             <button class="delete" @click=" deleteImport(item)"><i class="fa fa-trash"></i></button>
@@ -55,16 +55,6 @@ export default {
             importjaptodar: [],
             isModalVisible: false,
             error: ''
-        }
-    },
-
-    computed: {
-        headers() {
-            return {
-                headers: {
-                    "Authorization": "Bearer " + this.$store.state.user.access
-                }
-            }
         }
     },
     watch: {

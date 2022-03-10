@@ -20,10 +20,10 @@
                         <td>{{ item.transport }}</td>
                         <td>{{ item.taux }}</td>
                         <td>{{ item.Dédouanement }}</td>
-                        <td>{{ item.autre_dépenses }}</td>
+                        <td>{{ money(item.autre_dépenses) }} Fbu</td>
                         <td>{{ item.details }}</td>
-                        <td>{{ item.date }}</td>
-                        <td>{{ item.prix_vente_previ }}</td>
+                        <td>{{ datetime(item.date) }}</td>
+                        <td>{{ money(item.prix_vente_previ) }} Fbu</td>
                         <td>
                             <button class="delete" @click=" deleteImport(item)"><i class="fa fa-trash"></i></button>
                             <button class="edit" @click="edit()"><i class="fa fa-edit"></i></button>
@@ -55,16 +55,6 @@ export default {
             importdartobuja: [],
             isModalVisible: false,
             error: ''
-        }
-    },
-
-    computed: {
-        headers() {
-            return {
-                headers: {
-                    "Authorization": "Bearer " + this.$store.state.user.access
-                }
-            }
         }
     },
     watch: {
