@@ -1,5 +1,5 @@
 <template>
-  <div class="parcelles">
+  <div class="partners">
     <table>
       <thead>
         <tr>
@@ -17,7 +17,7 @@
           <td></td>
           <td></td>
           <td>
-            <button class="delete" @click="deleteIncome(income)">
+            <button class="delete" @click="deleteIncome(partner)">
               <i class="fa fa-trash"></i>
             </button>
             <button class="edit" @click="edit()">
@@ -32,6 +32,15 @@
 
 <script>
 methods: {
+  export default {
+    edit() {
+      console.log("first edit");
+    },
+
+    deletePartner(partner) {
+      alert("Partner deleted");
+    },
+  };
 }
 </script>
 
